@@ -83,7 +83,7 @@
   flex-shrink: 0;
 }
 
-/* Mobile Drawer (Solid background, links starting immediately under header) */
+/* Mobile Drawer (Solid background, centered links starting immediately under header) */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -96,7 +96,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 76px; /* Positions menu content 16-24px underneath header bar */
   box-shadow: -10px 0 30px rgba(11, 16, 32, 0.1);
 }
@@ -108,7 +108,8 @@
 .mobile-menu-inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   gap: 20px; /* 18–24px spacing between items */
   width: 100%;
   padding: 20px 24px;
@@ -124,6 +125,7 @@
   text-decoration: none;
   transition: color 0.2s ease;
   width: 100%;
+  text-align: center;
   padding: 4px 0;
 }
 
