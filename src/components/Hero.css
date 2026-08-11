@@ -1,0 +1,129 @@
+.hero-section {
+  position: relative;
+  background-color: var(--bg-main);
+  padding-top: 130px; /* 80px navbar + ~50px intentional gap */
+  padding-bottom: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Full-width Background Image & Dark Overlay */
+.hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    rgba(11, 11, 11, 0.88) 0%, 
+    rgba(11, 11, 11, 0.72) 45%, 
+    rgba(11, 11, 11, 0.96) 100%);
+  pointer-events: none;
+}
+
+.hero-container-centered {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Centered Header Section */
+.hero-header-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px; /* Compact spacing before booking widget */
+}
+
+.eyebrow-centered {
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.hero-title-centered {
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.hero-highlight {
+  color: #FFFFFF;
+}
+
+.hero-description-centered {
+  font-size: 1.05rem;
+  color: #DDDDDD;
+  max-width: 700px;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Official Injected Booking Widget Container */
+.booking-widget-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+#wst-rental-widget {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Mobile & Responsive Rules */
+@media (max-width: 992px) {
+  .hero-section {
+    padding-top: 110px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+
+  .hero-title-centered {
+    font-size: 2.2rem;
+  }
+
+  .hero-description-centered {
+    font-size: 0.95rem;
+  }
+
+  .booking-widget-container {
+    padding: 8px 0;
+  }
+}

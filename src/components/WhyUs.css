@@ -1,0 +1,102 @@
+.whyus-section {
+  background-color: var(--bg-main);
+  position: relative;
+}
+
+.whyus-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.whyus-header .eyebrow {
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.whyus-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.whyus-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.whyus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.whyus-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 32px 28px;
+  border-radius: 4px;
+  transition: border-color var(--transition-fast), transform var(--transition-medium);
+}
+
+.whyus-card:hover {
+  border-color: var(--border-orange);
+  transform: translateY(-4px);
+}
+
+.whyus-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.whyus-icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.whyus-icon {
+  color: var(--accent-orange);
+}
+
+.whyus-num {
+  font-family: var(--font-headline);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-muted);
+}
+
+.whyus-card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.whyus-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .whyus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .whyus-grid {
+    grid-template-columns: 100%;
+  }
+}
