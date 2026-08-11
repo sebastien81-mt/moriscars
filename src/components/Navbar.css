@@ -18,22 +18,25 @@
 
 .navbar-inner {
   position: relative;
-  z-index: 1001; /* Keeps logo and hamburger X button on top of mobile menu drawer */
+  z-index: 1001; /* Keeps logo, CTA, and hamburger X button on top of mobile menu drawer */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo-img {
   height: 38px;
   width: auto;
   object-fit: contain;
+  transition: height 0.2s ease;
 }
 
 .navbar-nav {
@@ -59,12 +62,15 @@
 .navbar-actions {
   display: flex;
   align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
-.desktop-nav-cta {
+.header-nav-cta {
   font-size: 0.85rem;
   padding: 10px 22px;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .mobile-toggle {
@@ -74,6 +80,7 @@
   color: var(--color-text-primary);
   cursor: pointer;
   padding: 6px;
+  flex-shrink: 0;
 }
 
 /* Mobile Drawer (Solid background, links starting immediately under header) */
@@ -124,14 +131,38 @@
   color: var(--color-accent);
 }
 
-@media (max-width: 900px) {
+/* MOBILE HEADER CTA & BREAKPOINT STYLING */
+@media (max-width: 768px) {
   .navbar-nav {
     display: none;
   }
-  .desktop-nav-cta {
-    display: none; /* Do not show BOOK A CAR in closed mobile header */
-  }
   .mobile-toggle {
     display: flex;
+  }
+  
+  /* Compact single-line mobile CTA button */
+  .header-nav-cta {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 10px 16px;
+    min-height: auto;
+    border-radius: 8px;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-nav-cta {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  .logo-img {
+    height: 28px;
   }
 }

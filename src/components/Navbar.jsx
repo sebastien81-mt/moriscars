@@ -64,9 +64,9 @@ export default function Navbar() {
           <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="nav-link">CONTACT</a>
         </nav>
 
-        {/* Desktop Action (BOOK A CAR) & Mobile Hamburger Toggle */}
+        {/* Desktop & Mobile CTA (BOOK A CAR) & Mobile Hamburger Toggle */}
         <div className="navbar-actions">
-          <a href="#hero" onClick={scrollToWidget} className="btn-primary desktop-nav-cta">
+          <a href="#hero" onClick={scrollToWidget} className="btn-primary header-nav-cta">
             BOOK A CAR
           </a>
           
@@ -75,7 +75,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
