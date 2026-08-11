@@ -2,24 +2,23 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  height: 80px;
-  background-color: rgba(11, 11, 11, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  z-index: 10000;
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  padding: 16px 0;
 }
 
 .navbar.scrolled {
-  background-color: #0B0B0B;
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(11, 16, 32, 0.06);
+  padding: 12px 0;
 }
 
 .navbar-inner {
-  height: 100%;
+  position: relative;
+  z-index: 1001; /* Keeps logo and hamburger X button on top of mobile menu drawer */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,164 +27,111 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  z-index: 10001;
+  text-decoration: none;
 }
 
-.logo-box {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--font-headline);
-  font-weight: 900;
-  font-size: 1.4rem;
-  letter-spacing: 0.05em;
-}
-
-.logo-ride {
-  color: #FFFFFF;
-  margin-right: 4px;
-}
-
-.logo-moris {
-  background-color: var(--accent-orange);
-  color: #000000;
-  padding: 2px 8px;
-  border-radius: 2px;
+.logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navbar-nav {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
 }
 
 .nav-link {
-  font-family: var(--font-headline);
+  font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #CCCCCC;
-  transition: color var(--transition-fast);
-  position: relative;
+  letter-spacing: 0.03em;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: var(--accent-orange);
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--accent-orange);
-  transition: width var(--transition-fast);
-}
-
-.nav-link:hover::after {
-  width: 100%;
+  color: var(--color-accent);
 }
 
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
-.nav-cta {
-  padding: 12px 24px;
+.desktop-nav-cta {
   font-size: 0.85rem;
-  text-align: center;
-  justify-content: center;
+  padding: 10px 22px;
+  letter-spacing: 0.02em;
 }
 
 .mobile-toggle {
   display: none;
   background: none;
   border: none;
-  color: #FFFFFF;
+  color: var(--color-text-primary);
   cursor: pointer;
-  padding: 8px;
-  min-width: 44px;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-  z-index: 10001;
+  padding: 6px;
 }
 
-/* Mobile Solid Dark Overlay Menu */
+/* Mobile Drawer (Solid background, links starting immediately under header) */
 .mobile-menu {
   position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: calc(100dvh - 80px);
-  background-color: #0B0B0B; /* SOLID DARK BACKGROUND (NON-TRANSPARENT) */
-  transform: translateY(-100%);
-  opacity: 0;
-  visibility: hidden;
-  transition: transform var(--transition-medium), opacity var(--transition-medium), visibility var(--transition-medium);
-  z-index: 9999;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFFFFF;
+  z-index: 999;
+  transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 76px; /* Positions menu content 16-24px underneath header bar */
+  box-shadow: -10px 0 30px rgba(11, 16, 32, 0.1);
 }
 
 .mobile-menu.open {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
+  right: 0;
 }
 
 .mobile-menu-inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100%;
-  gap: 24px;
-  padding-top: 28px;
-  padding-bottom: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
+  align-items: flex-start;
+  gap: 20px; /* 18–24px spacing between items */
+  width: 100%;
+  padding: 20px 24px;
+  margin-top: 0;
 }
 
 .mobile-link {
-  font-family: var(--font-headline);
-  font-size: 1.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  transition: color var(--transition-fast);
+  letter-spacing: 0.05em;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  width: 100%;
+  padding: 4px 0;
 }
 
 .mobile-link:hover {
-  color: var(--accent-orange);
+  color: var(--color-accent);
 }
 
-/* Responsive Media Queries for Mobile/Tablet */
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .navbar-nav {
     display: none;
   }
-
+  .desktop-nav-cta {
+    display: none; /* Do not show BOOK A CAR in closed mobile header */
+  }
   .mobile-toggle {
     display: flex;
-  }
-  
-  /* HIDE HEADER BOOK A CAR BUTTON COMPLETELY ON MOBILE/TABLET */
-  .nav-cta {
-    display: none !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .logo-box {
-    font-size: 1.25rem;
-  }
-
-  .mobile-link {
-    font-size: 1.35rem;
   }
 }

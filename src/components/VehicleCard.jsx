@@ -44,7 +44,7 @@ export default function VehicleCard({ vehicle, onSelect }) {
           </span>
         </div>
 
-        <div className="card-footer">
+        <div className="card-action-row">
           <button onClick={scrollToWidget} className="card-cta-btn" aria-label={`Book ${vehicle.name}`}>
             <span>BOOK NOW</span>
             <ArrowRight size={16} className="cta-arrow" />

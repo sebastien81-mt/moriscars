@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, MapPin } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 import './MauritiusExperience.css';
 
 export default function MauritiusExperience() {
@@ -23,19 +24,19 @@ export default function MauritiusExperience() {
       </div>
 
       <div className="container experience-content">
-        <div className="eyebrow">
-          <span className="eyebrow-line"></span>
+        <div className="eyebrow eyebrow-light">
+          <span className="eyebrow-line eyebrow-line-light"></span>
           <span>MAURITIUS ROAD TRIP</span>
         </div>
 
         <h2 className="experience-title">
           YOUR ISLAND.<br />
           YOUR ROAD.<br />
-          <span className="text-orange">YOUR ADVENTURE.</span>
+          <span className="text-coral">YOUR ADVENTURE.</span>
         </h2>
 
         <p className="experience-desc">
-          Explore white-sand beaches, mountain lookouts, tea plantations, and coastal fishing villages across Mauritius with absolute independence and comfort.
+          Explore white-sand beaches, mountain lookouts, tea plantations, and coastal fishing villages across Mauritius with absolute independence and comfort with {siteConfig.brandName}.
         </p>
 
         <div className="experience-tags">
@@ -45,7 +46,7 @@ export default function MauritiusExperience() {
           <span className="exp-tag"><MapPin size={14} /> Belle Mare Coast</span>
         </div>
 
-        <button onClick={scrollToWidget} className="btn-primary experience-cta">
+        <button onClick={scrollToWidget} className="btn-accent experience-cta">
           <span>FIND YOUR CAR</span>
           <ArrowRight size={18} />
         </button>

@@ -14,7 +14,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open to prevent background scrolling
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -48,11 +47,12 @@ export default function Navbar() {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-inner">
         {/* Brand Logo */}
-        <a href="#" className="navbar-logo" aria-label="RideMoris Home">
-          <span className="logo-box">
-            <span className="logo-ride">RIDE</span>
-            <span className="logo-moris">MORIS</span>
-          </span>
+        <a href="#" className="navbar-logo" aria-label="MorisCars Home">
+          <img 
+            src="/assets/logo.svg" 
+            alt="MorisCars - Car Rental Mauritius" 
+            className="logo-img"
+          />
         </a>
 
         {/* Desktop Navigation */}
@@ -64,9 +64,9 @@ export default function Navbar() {
           <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="nav-link">CONTACT</a>
         </nav>
 
-        {/* Desktop Action & Mobile Toggle */}
+        {/* Desktop Action (BOOK A CAR) & Mobile Hamburger Toggle */}
         <div className="navbar-actions">
-          <a href="#hero" onClick={scrollToWidget} className="btn-primary nav-cta">
+          <a href="#hero" onClick={scrollToWidget} className="btn-primary desktop-nav-cta">
             BOOK A CAR
           </a>
           
@@ -80,7 +80,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Solid Dark Overlay Menu */}
+      {/* Mobile Solid Light Menu Drawer (No CTA button inside) */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-inner">
           <a href="#hero" onClick={(e) => scrollToSection(e, 'hero')} className="mobile-link">HOME</a>

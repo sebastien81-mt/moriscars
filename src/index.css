@@ -1,33 +1,39 @@
-/* RideMoris — Premium Dark Automotive Visual System */
-
 :root {
-  --bg-main: #0B0B0B;
-  --bg-secondary: #111111;
-  --bg-card: #141414;
-  --bg-card-hover: #1A1A1A;
+  /* Color Palette matching reference design */
+  --color-hero-bg: #D9F2FA;
+  --color-bg-main: #FFFFFF;
+  --color-bg-subtle: #F8FAFC;
+  --color-text-primary: #0B1020;
+  --color-text-secondary: #3E4653;
+  --color-text-muted: #64748B;
   
-  --text-primary: #FFFFFF;
-  --text-secondary: #8A8A8A;
-  --text-muted: #555555;
-  
-  --accent-orange: #F5A000;
-  --accent-orange-hover: #E09300;
-  --accent-orange-glow: rgba(245, 160, 0, 0.25);
-  
-  --border-light: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.14);
-  --border-orange: rgba(245, 160, 0, 0.4);
+  --color-accent: #EF514C;        /* Coral / Red */
+  --color-accent-hover: #D93B36;
+  --color-accent-light: #FDE8E7;
 
-  --font-headline: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-dark-cta: #080D1A;      /* Deep Navy CTA */
+  --color-dark-cta-hover: #162038;
 
-  --max-width: 1320px;
-  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-medium: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --color-border: rgba(11, 16, 32, 0.10);
+  --color-border-hover: rgba(239, 81, 76, 0.35);
+
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --shadow-sm: 0 2px 8px rgba(11, 16, 32, 0.04);
+  --shadow-md: 0 8px 24px rgba(11, 16, 32, 0.06);
+  --shadow-lg: 0 16px 40px rgba(11, 16, 32, 0.08);
+  --shadow-card: 0 20px 40px -15px rgba(11, 16, 32, 0.07);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  --max-width: 1200px;
 }
 
-/* CSS Reset & Base */
-*, *::before, *::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -35,176 +41,134 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-main);
-  color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.5;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-main);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   overflow-x: hidden;
-  background-color: var(--bg-main);
-  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
-/* Typography Hierarchy */
-h1, h2, h3, h4, .font-heading {
-  font-family: var(--font-headline);
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
-  color: var(--text-primary);
-}
-
-p {
-  color: var(--text-secondary);
-  font-weight: 400;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Layout Utilities */
 .container {
   width: 100%;
   max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 60px;
-  padding-right: 60px;
-}
-
-@media (max-width: 1024px) {
-  .container {
-    padding-left: 36px;
-    padding-right: 36px;
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .section-padding {
-  padding-top: 110px;
-  padding-bottom: 110px;
+  padding: 96px 0;
 }
 
-@media (max-width: 768px) {
-  .section-padding {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-}
-
-/* Shared UI Components */
+/* Common Eyebrow Pill */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  color: var(--accent-orange);
-  font-family: var(--font-headline);
-  font-weight: 700;
+  gap: 8px;
+  font-family: var(--font-heading);
   font-size: 0.85rem;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 12px;
 }
 
 .eyebrow-line {
-  width: 28px;
+  width: 18px;
   height: 2px;
-  background-color: var(--accent-orange);
+  background-color: var(--color-accent);
   display: inline-block;
 }
 
+/* Button Components */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background-color: var(--accent-orange);
-  color: #000000;
-  font-family: var(--font-headline);
-  font-weight: 800;
+  gap: 8px;
+  background-color: var(--color-dark-cta);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
   font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 16px 32px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
   border: none;
-  border-radius: 2px;
   cursor: pointer;
-  transition: all var(--transition-fast);
-  box-shadow: 0 4px 20px rgba(245, 160, 0, 0.2);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(8, 13, 26, 0.15);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-orange-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(245, 160, 0, 0.35);
+  background-color: var(--color-dark-cta-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(8, 13, 26, 0.22);
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(239, 81, 76, 0.25);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(239, 81, 76, 0.35);
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   background-color: transparent;
-  color: var(--text-primary);
-  font-family: var(--font-headline);
-  font-weight: 700;
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
   font-size: 0.95rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 15px 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-border);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  border-color: var(--text-primary);
-  background-color: rgba(255, 255, 255, 0.05);
-  color: var(--text-primary);
+  border-color: var(--color-text-primary);
+  background-color: rgba(11, 16, 32, 0.03);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-main);
-}
-::-webkit-scrollbar-thumb {
-  background: #222222;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-orange);
-}
-
-/* Widget CSS Protection & Styling */
-#wst-rental-widget {
-  width: 100%;
-  min-height: 250px;
-}
-
-/* Make sure booking widget input styles don't conflict with site */
-#booking-widget-container {
-  background: #111111;
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  margin: 0 auto;
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  .container {
+    padding: 0 16px;
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Plane, Key, BadgePercent, Car, Headphones, MousePointerClick } from 'lucide-react';
+import { Plane, Key, ShieldCheck, Car, Headphones, MousePointerClick } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 import './WhyUs.css';
 
 const REASONS = [
@@ -14,9 +15,9 @@ const REASONS = [
     desc: 'Convenient vehicle delivery and pickup directly at your hotel, resort, or villa anywhere on the island.'
   },
   {
-    icon: BadgePercent,
-    title: 'TRANSPARENT PRICING',
-    desc: 'No hidden extras, surprising deposit terms, or hidden fees. Clear pricing confirmed before you book.'
+    icon: ShieldCheck,
+    title: 'TRANSPARENT BOOKING',
+    desc: 'No hidden extras, surprising deposit terms, or hidden fees. Clear terms confirmed before you book.'
   },
   {
     icon: Car,
@@ -42,9 +43,9 @@ export default function WhyUs() {
         <div className="whyus-header">
           <div className="eyebrow">
             <span className="eyebrow-line"></span>
-            <span>THE RIDEMORIS DIFFERENCE</span>
+            <span>THE {siteConfig.brandName.toUpperCase()} DIFFERENCE</span>
           </div>
-          <h2 className="whyus-title">WHY CHOOSE RIDEMORIS</h2>
+          <h2 className="whyus-title">WHY CHOOSE {siteConfig.brandName.toUpperCase()}</h2>
           <p className="whyus-subtitle">Simple rental. Local service. Complete freedom to explore.</p>
         </div>
 

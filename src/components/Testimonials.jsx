@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 import './Testimonials.css';
 
 const REVIEWS = [
@@ -14,7 +15,7 @@ const REVIEWS = [
   {
     id: 2,
     rating: 5,
-    quote: "Booking with RideMoris was completely smooth. The hotel delivery in Grand Baie arrived exactly on time, and communication on WhatsApp was excellent.",
+    quote: `Booking with ${siteConfig.brandName} was completely smooth. The hotel delivery in Grand Baie arrived exactly on time, and communication on WhatsApp was excellent.`,
     name: "SOPHIE M.",
     country: "France",
     car: "Rented Toyota Raize SUV"
@@ -22,7 +23,7 @@ const REVIEWS = [
   {
     id: 3,
     rating: 5,
-    quote: "Transparent pricing with no unexpected deposit surprises. Having a reliable car made exploring Chamarel and Le Morne stress-free.",
+    quote: "Transparent booking terms with no unexpected deposit surprises. Having a reliable car made exploring Chamarel and Le Morne stress-free.",
     name: "MARKUS K.",
     country: "Germany",
     car: "Rented Hyundai i20"
@@ -39,19 +40,19 @@ export default function Testimonials() {
             <span>CUSTOMER REVIEWS</span>
           </div>
           <h2 className="testimonials-title">TRUSTED BY TRAVELLERS</h2>
-          <p className="testimonials-subtitle">Read how RideMoris helps island visitors enjoy effortless road trips around Mauritius.</p>
+          <p className="testimonials-subtitle">Read how {siteConfig.brandName} helps island visitors enjoy effortless road trips around Mauritius.</p>
         </div>
 
         <div className="testimonials-grid">
           {REVIEWS.map((review) => (
             <div key={review.id} className="testimonial-card">
               <div className="quote-icon-box">
-                <Quote size={28} className="quote-icon" />
+                <Quote size={24} className="quote-icon" />
               </div>
 
               <div className="stars-row">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="star-icon" />
+                  <Star key={i} size={15} className="star-icon" fill="#F59E0B" />
                 ))}
               </div>
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 50" width="240" height="50" fill="none">
+  <!-- Brand Symbol: 6-pointed rounded star / asterisk in coral/red #EF514C -->
+  <g transform="translate(10, 8)">
+    <g transform="translate(17, 17)">
+      <!-- Central vertical beam -->
+      <rect x="-3" y="-15" width="6" height="30" rx="3" fill="#EF514C" />
+      <!-- 60 deg rotated beam -->
+      <rect x="-3" y="-15" width="6" height="30" rx="3" fill="#EF514C" transform="rotate(60)" />
+      <!-- 120 deg rotated beam -->
+      <rect x="-3" y="-15" width="6" height="30" rx="3" fill="#EF514C" transform="rotate(120)" />
+      <!-- Center dot -->
+      <circle r="4" fill="#EF514C" />
+    </g>
+  </g>
+  <!-- Wordmark: Moris in #0B1020, Cars in #EF514C -->
+  <text x="54" y="34" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" font-weight="800" font-size="28" letter-spacing="-0.5">
+    <tspan fill="#0B1020">Moris</tspan><tspan fill="#EF514C">Cars</tspan>
+  </text>
+</svg>

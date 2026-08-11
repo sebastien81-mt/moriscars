@@ -1,104 +1,90 @@
 .how-section {
-  background-color: var(--bg-secondary);
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
-  position: relative;
-  overflow: hidden;
+  background-color: var(--color-bg-main);
 }
 
 .how-header {
   text-align: center;
-  margin-bottom: 60px;
-}
-
-.how-header .eyebrow {
-  justify-content: center;
-  margin-bottom: 12px;
+  max-width: 680px;
+  margin: 0 auto 56px;
 }
 
 .how-title {
-  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-  font-weight: 900;
-  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
 }
 
 .how-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 50px;
+  gap: 32px;
+  margin-bottom: 48px;
 }
 
 .how-card {
   position: relative;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-light);
-  padding: 36px 30px;
-  border-radius: 4px;
-  overflow: hidden;
-  transition: border-color var(--transition-fast);
+  background-color: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: 32px 28px;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .how-card:hover {
-  border-color: var(--border-orange);
+  transform: translateY(-4px);
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-md);
 }
 
 .ghost-num {
   position: absolute;
-  top: -15px;
-  right: 15px;
-  font-family: var(--font-headline);
-  font-size: 7.5rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.025);
-  user-select: none;
-  pointer-events: none;
+  top: 12px;
+  right: 20px;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: rgba(11, 16, 32, 0.05);
   line-height: 1;
-}
-
-.how-card-inner {
-  position: relative;
-  z-index: 2;
+  user-select: none;
 }
 
 .how-step-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-headline);
-  font-size: 0.72rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.15em;
-  color: var(--accent-orange);
-  margin-bottom: 20px;
-}
-
-.step-icon {
-  color: var(--accent-orange);
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-bottom: 16px;
 }
 
 .how-step-title {
-  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-text-primary);
   margin-bottom: 12px;
-  letter-spacing: 0.02em;
 }
 
 .how-step-desc {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
   line-height: 1.6;
+  margin: 0;
 }
 
 .how-cta-box {
   text-align: center;
-  margin-top: 20px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .how-grid {
-    grid-template-columns: 100%;
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }

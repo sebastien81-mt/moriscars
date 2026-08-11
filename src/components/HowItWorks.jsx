@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search, CalendarCheck, Compass } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 import './HowItWorks.css';
 
 const STEPS = [
@@ -12,7 +13,7 @@ const STEPS = [
   {
     num: '02',
     title: 'BOOK ONLINE',
-    desc: 'Confirm your reservation in seconds with transparent pricing, instant confirmation, and flexible insurance options.',
+    desc: 'Confirm your reservation in seconds with transparent terms, instant confirmation, and flexible insurance options.',
     icon: CalendarCheck
   },
   {

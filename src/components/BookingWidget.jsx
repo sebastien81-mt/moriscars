@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Calendar, Shield, MapPin, Clock } from 'lucide-react';
+import { Shield, MapPin, Clock } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 import './BookingWidget.css';
 
 export default function BookingWidget() {
@@ -45,11 +46,11 @@ export default function BookingWidget() {
         <div className="booking-header">
           <div className="eyebrow">
             <span className="eyebrow-line"></span>
-            <span>BOOK YOUR RIDE</span>
+            <span>BOOK YOUR CAR</span>
           </div>
           <h2 className="booking-title">FIND YOUR PERFECT CAR</h2>
           <p className="booking-subtitle">
-            Choose your dates and select the right RideMoris vehicle for your Mauritius island adventure.
+            Choose your dates and select the right {siteConfig.brandName} vehicle for your Mauritius island adventure.
           </p>
         </div>
 
@@ -84,7 +85,7 @@ export default function BookingWidget() {
               <iframe
                 src="https://book.carhiremauritius.com/widget?referer_code=FbwaL73-4hKKSvz9"
                 name="carRentalBookingWidget"
-                title="RideMoris Car Hire Booking Widget"
+                title={`${siteConfig.brandName} Car Hire Booking Widget`}
                 className="booking-iframe"
                 scrolling="auto"
                 loading="lazy"

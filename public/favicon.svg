@@ -1,4 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="12" fill="#F5A000"/>
-  <text x="32" y="46" font-family="'Archivo', 'Arial Black', sans-serif" font-weight="900" font-size="44" fill="#0B0B0B" text-anchor="middle">R</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Rounded coral container background -->
+  <rect width="64" height="64" rx="16" fill="#EF514C" />
+  <!-- White 6-pointed star / asterisk -->
+  <g transform="translate(32, 32)">
+    <rect x="-4" y="-20" width="8" height="40" rx="4" fill="#FFFFFF" />
+    <rect x="-4" y="-20" width="8" height="40" rx="4" fill="#FFFFFF" transform="rotate(60)" />
+    <rect x="-4" y="-20" width="8" height="40" rx="4" fill="#FFFFFF" transform="rotate(120)" />
+    <circle r="6" fill="#FFFFFF" />
+  </g>
 </svg>

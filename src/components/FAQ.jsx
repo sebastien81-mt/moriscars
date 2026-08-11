@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 import './FAQ.css';
 
 const FAQS = [
@@ -9,7 +10,7 @@ const FAQS = [
   },
   {
     q: "Can I collect the car at Mauritius Airport (SSR International)?",
-    a: "Yes! RideMoris offers convenient airport delivery at Sir Seewoosagur Ramgoolam International Airport (MRU). Our representative will meet you at the arrivals terminal so you can start driving immediately."
+    a: `Yes! ${siteConfig.brandName} offers convenient airport delivery at Sir Seewoosagur Ramgoolam International Airport (MRU). Our representative will meet you at the arrivals terminal so you can start driving immediately.`
   },
   {
     q: "Can the car be delivered to my hotel or villa?",
@@ -17,11 +18,11 @@ const FAQS = [
   },
   {
     q: "Is insurance included in the rental price?",
-    a: "All RideMoris vehicles come with standard Third Party Insurance and Collision Damage Waiver (CDW). Full Comprehensive Insurance upgrades with reduced excess are also selectable during booking."
+    a: `All ${siteConfig.brandName} vehicles come with standard Third Party Insurance and Collision Damage Waiver (CDW). Full Comprehensive Insurance upgrades with reduced excess are also selectable during booking.`
   },
   {
     q: "Is there a security deposit required?",
-    a: "A standard security deposit is authorized on your credit card at pickup and fully released upon vehicle return in good condition. Deposit amounts vary depending on the vehicle class."
+    a: "A standard security deposit is authorized on your card at pickup and fully released upon vehicle return in good condition. Deposit amounts vary depending on the vehicle class."
   },
   {
     q: "Can I add an additional driver to my reservation?",
@@ -53,7 +54,7 @@ export default function FAQ() {
             <span>NEED ANSWERS?</span>
           </div>
           <h2 className="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
-          <p className="faq-subtitle">Everything you need to know about driving and renting a car in Mauritius with RideMoris.</p>
+          <p className="faq-subtitle">Everything you need to know about driving and renting a car in Mauritius with {siteConfig.brandName}.</p>
         </div>
 
         <div className="faq-accordion">

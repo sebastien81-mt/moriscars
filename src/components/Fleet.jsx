@@ -109,7 +109,7 @@ export default function Fleet() {
           <div className="fleet-title-block">
             <div className="eyebrow">
               <span className="eyebrow-line"></span>
-              <span>RIDEMORIS FLEET</span>
+              <span>MORISCARS FLEET</span>
             </div>
             <h2 className="fleet-heading">FEATURED CARS</h2>
           </div>
@@ -138,7 +138,7 @@ export default function Fleet() {
         {/* Bottom Callout */}
         <div className="fleet-bottom-bar">
           <p className="fleet-note">
-            All RideMoris vehicles are air-conditioned, regularly serviced, and supplied with full comprehensive insurance options.
+            All MorisCars vehicles are air-conditioned, regularly serviced, and supplied with full comprehensive insurance options.
           </p>
           <button onClick={scrollToWidget} className="btn-secondary">
             VIEW ALL CARS

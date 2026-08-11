@@ -1,99 +1,85 @@
 .fleet-section {
-  background-color: var(--bg-main);
-  position: relative;
+  background-color: var(--color-bg-main);
 }
 
 .fleet-top-bar {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 20px;
 }
 
 .fleet-heading {
-  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-  font-weight: 900;
-  color: #FFFFFF;
-  margin-top: 8px;
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
 }
 
 .category-filters {
   display: flex;
-  align-items: center;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .filter-btn {
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-light);
-  color: var(--text-secondary);
-  font-family: var(--font-headline);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  padding: 10px 18px;
-  border-radius: 2px;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease;
 }
 
 .filter-btn:hover {
-  color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(11, 16, 32, 0.05);
 }
 
 .filter-btn.active {
-  background-color: var(--accent-orange);
-  color: #000000;
-  border-color: var(--accent-orange);
-  box-shadow: 0 4px 15px rgba(245, 160, 0, 0.25);
+  background-color: var(--color-dark-cta);
+  color: #FFFFFF;
+  border-color: var(--color-dark-cta);
 }
 
 .fleet-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 28px;
+  margin-bottom: 48px;
 }
 
 .fleet-bottom-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 30px;
-  border-top: 1px solid var(--border-light);
-  flex-wrap: wrap;
-  gap: 20px;
+  padding: 24px 32px;
+  background-color: var(--color-bg-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  gap: 24px;
 }
 
 .fleet-note {
   font-size: 0.9rem;
-  color: var(--text-secondary);
-  max-width: 640px;
+  color: var(--color-text-secondary);
+  margin: 0;
 }
 
-@media (max-width: 1024px) {
-  .fleet-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .fleet-top-bar {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .fleet-grid {
-    grid-template-columns: 100%;
-  }
-
   .fleet-bottom-bar {
     flex-direction: column;
-    align-items: stretch;
     text-align: center;
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Plane, Hotel, Headset, ArrowRight } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 import './About.css';
 
 export default function About() {
@@ -14,7 +15,7 @@ export default function About() {
     <section id="about" className="about-section section-padding">
       <div className="container">
         <div className="about-grid">
-          {/* Left Column: Image with Overlapping Orange Badge */}
+          {/* Left Column: Image with Overlapping Coral Badge */}
           <div className="about-image-column">
             <div className="about-image-wrapper">
               <img 
@@ -24,15 +25,15 @@ export default function About() {
                 loading="lazy"
               />
               
-              {/* Overlapping Orange Badge */}
-              <div className="about-orange-badge">
-                <div className="badge-brand">RIDEMORIS</div>
+              {/* Overlapping Coral Badge */}
+              <div className="about-coral-badge">
+                <div className="badge-brand">{siteConfig.brandName}</div>
                 <h4 className="badge-slogan">
                   DRIVE.<br />
                   EXPLORE.<br />
                   DISCOVER.
                 </h4>
-                <a href="#booking-section" onClick={(e) => { e.preventDefault(); scrollToWidget(); }} className="badge-link">
+                <a href="#hero" onClick={(e) => { e.preventDefault(); scrollToWidget(); }} className="badge-link">
                   <span>DISCOVER MAURITIUS</span>
                   <ArrowRight size={16} />
                 </a>
@@ -44,7 +45,7 @@ export default function About() {
           <div className="about-content-column">
             <div className="eyebrow">
               <span className="eyebrow-line"></span>
-              <span>ABOUT RIDEMORIS</span>
+              <span>ABOUT {siteConfig.brandName.toUpperCase()}</span>
             </div>
 
             <h2 className="about-title">
@@ -53,7 +54,7 @@ export default function About() {
             </h2>
 
             <p className="about-text">
-              Explore Mauritius with complete freedom. RideMoris makes renting a car simple, with convenient online booking, reliable vehicles and flexible pickup options for your stay on the island.
+              Explore Mauritius with complete freedom. {siteConfig.brandName} makes renting a car simple, with convenient online booking, reliable vehicles and flexible pickup options for your stay on the island.
             </p>
 
             <p className="about-subtext">
@@ -64,7 +65,7 @@ export default function About() {
             <div className="about-benefits-row">
               <div className="about-benefit-item">
                 <div className="benefit-icon-box">
-                  <Plane size={24} />
+                  <Plane size={22} />
                 </div>
                 <div className="benefit-text-box">
                   <h5>AIRPORT PICKUP</h5>
@@ -74,7 +75,7 @@ export default function About() {
 
               <div className="about-benefit-item">
                 <div className="benefit-icon-box">
-                  <Hotel size={24} />
+                  <Hotel size={22} />
                 </div>
                 <div className="benefit-text-box">
                   <h5>HOTEL DELIVERY</h5>
@@ -84,7 +85,7 @@ export default function About() {
 
               <div className="about-benefit-item">
                 <div className="benefit-icon-box">
-                  <Headset size={24} />
+                  <Headset size={22} />
                 </div>
                 <div className="benefit-text-box">
                   <h5>LOCAL SUPPORT</h5>

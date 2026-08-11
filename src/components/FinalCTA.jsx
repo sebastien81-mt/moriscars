@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowRight, Car } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 import './FinalCTA.css';
 
 export default function FinalCTA() {
@@ -29,7 +30,7 @@ export default function FinalCTA() {
           <h2 className="finalcta-title">READY TO EXPLORE MAURITIUS?</h2>
 
           <p className="finalcta-desc">
-            Find your RideMoris car and start planning your island adventure with total freedom and peace of mind.
+            Find your {siteConfig.brandName} car and start planning your island adventure with total freedom and peace of mind.
           </p>
 
           <div className="finalcta-buttons">
