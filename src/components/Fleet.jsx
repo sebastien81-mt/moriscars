@@ -11,7 +11,6 @@ const FLEET_DATA = [
     transmission: 'AUTOMATIC',
     seats: 5,
     luggage: '2 Bags',
-    price: '€35',
     image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -22,7 +21,6 @@ const FLEET_DATA = [
     transmission: 'AUTOMATIC',
     seats: 5,
     luggage: '3 Bags',
-    price: '€45',
     image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -33,7 +31,6 @@ const FLEET_DATA = [
     transmission: 'AUTOMATIC',
     seats: 5,
     luggage: '2 Bags',
-    price: '€38',
     image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -44,7 +41,6 @@ const FLEET_DATA = [
     transmission: 'AUTOMATIC',
     seats: 5,
     luggage: '2 Bags',
-    price: '€36',
     image: 'https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -55,7 +51,6 @@ const FLEET_DATA = [
     transmission: 'AUTOMATIC',
     seats: 5,
     luggage: '4 Bags',
-    price: '€55',
     image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -66,7 +61,6 @@ const FLEET_DATA = [
     transmission: 'AUTOMATIC',
     seats: 7,
     luggage: '4 Bags',
-    price: '€52',
     image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -77,7 +71,6 @@ const FLEET_DATA = [
     transmission: 'AUTOMATIC',
     seats: 4,
     luggage: '1 Bag',
-    price: '€30',
     image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -88,7 +81,6 @@ const FLEET_DATA = [
     transmission: 'AUTOMATIC',
     seats: 5,
     luggage: '3 Bags',
-    price: '€60',
     image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80'
   }
 ];
@@ -149,7 +141,7 @@ export default function Fleet() {
             All RideMoris vehicles are air-conditioned, regularly serviced, and supplied with full comprehensive insurance options.
           </p>
           <button onClick={scrollToWidget} className="btn-secondary">
-            VIEW ALL CARS & RATES
+            VIEW ALL CARS
           </button>
         </div>
       </div>

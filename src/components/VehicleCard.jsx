@@ -45,12 +45,6 @@ export default function VehicleCard({ vehicle, onSelect }) {
         </div>
 
         <div className="card-footer">
-          <div className="price-block">
-            <span className="price-label">FROM</span>
-            <span className="price-amount">{vehicle.price}</span>
-            <span className="price-period">/ PER DAY</span>
-          </div>
-
           <button onClick={scrollToWidget} className="card-cta-btn" aria-label={`Book ${vehicle.name}`}>
             <span>BOOK NOW</span>
             <ArrowRight size={16} className="cta-arrow" />
