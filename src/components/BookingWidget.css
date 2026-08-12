@@ -1,71 +1,5 @@
-.booking-section {
-  background-color: var(--bg-secondary);
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
-  position: relative;
-}
-
-.booking-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.booking-header .eyebrow {
-  justify-content: center;
-  margin-bottom: 12px;
-}
-
-.booking-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 900;
-  margin-bottom: 16px;
-  color: #FFFFFF;
-}
-
-.booking-subtitle {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.booking-widget-card {
-  max-width: 1140px;
-  margin: 0 auto;
-  background-color: #151515;
-  border: 1px solid var(--border-medium);
-  border-radius: 4px;
-  padding: 28px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-  position: relative;
-  overflow: hidden;
-}
-
-.widget-badge-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.widget-badge-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-headline);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #DDDDDD;
-  text-transform: uppercase;
-}
-
-.badge-icon {
-  color: var(--accent-orange);
+.booking-widget-wrapper {
+  width: 100%;
 }
 
 .widget-injected-wrapper {
@@ -74,6 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#wst-rental-widget {
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* Fallback Iframe Styling */
@@ -89,22 +28,12 @@
   max-width: 1060px;
   height: 650px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: #FFFFFF;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 768px) {
-  .booking-widget-card {
-    padding: 18px;
-  }
-
-  .widget-badge-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
   .booking-iframe {
     height: 750px;
   }
