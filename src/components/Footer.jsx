@@ -2,12 +2,29 @@ import React from 'react';
 import { siteConfig } from '../config/siteConfig';
 import './Footer.css';
 
-export default function Footer() {
+export default function Footer({ onNavigateTerms, onNavigateHome }) {
   const scrollToSection = (e, id) => {
     e.preventDefault();
-    const elem = document.getElementById(id);
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
+    if (window.location.pathname !== '/') {
+      if (onNavigateHome) {
+        onNavigateHome(id);
+      } else {
+        window.location.href = `/#${id}`;
+      }
+    } else {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleTermsClick = (e) => {
+    e.preventDefault();
+    if (onNavigateTerms) {
+      onNavigateTerms();
+    } else {
+      window.location.pathname = '/terms-and-conditions';
     }
   };
 
@@ -48,7 +65,7 @@ export default function Footer() {
             <h4 className="footer-col-title">NAVIGATION</h4>
             <ul className="footer-links-list">
               <li><a href="#hero" onClick={(e) => scrollToSection(e, 'hero')}>HOME</a></li>
-              <li><a href="#cars" onClick={(e) => scrollToSection(e, 'cars')}>CARS & FLEET</a></li>
+              <li><a href="#cars" onClick={(e) => scrollToSection(e, 'cars')}>CARS &amp; FLEET</a></li>
               <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>ABOUT US</a></li>
               <li><a href="#faq" onClick={(e) => scrollToSection(e, 'faq')}>FAQ</a></li>
               <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>CONTACT</a></li>
@@ -73,9 +90,7 @@ export default function Footer() {
           </p>
 
           <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <span className="dot">•</span>
-            <a href="#">Terms & Conditions</a>
+            <a href="/terms-and-conditions" onClick={handleTermsClick}>Terms &amp; Conditions</a>
           </div>
         </div>
       </div>

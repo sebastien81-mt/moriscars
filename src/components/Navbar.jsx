@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ onNavigateHome }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -25,21 +25,51 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    if (window.location.pathname !== '/') {
+      if (onNavigateHome) {
+        onNavigateHome();
+      } else {
+        window.location.pathname = '/';
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const scrollToWidget = (e) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const widgetElem = document.getElementById('hero');
-    if (widgetElem) {
-      widgetElem.scrollIntoView({ behavior: 'smooth' });
+    if (window.location.pathname !== '/') {
+      if (onNavigateHome) {
+        onNavigateHome('hero');
+      } else {
+        window.location.href = '/#hero';
+      }
+    } else {
+      const widgetElem = document.getElementById('hero');
+      if (widgetElem) {
+        widgetElem.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const elem = document.getElementById(id);
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
+    if (window.location.pathname !== '/') {
+      if (onNavigateHome) {
+        onNavigateHome(id);
+      } else {
+        window.location.href = `/#${id}`;
+      }
+    } else {
+      const elem = document.getElementById(id);
+      if (elem) {
+        elem.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -47,7 +77,7 @@ export default function Navbar() {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-inner">
         {/* Brand Logo */}
-        <a href="#" className="navbar-logo" aria-label="MorisCars Home">
+        <a href="/" onClick={handleLogoClick} className="navbar-logo" aria-label="MorisCars Home">
           <img 
             src="/assets/logo.svg" 
             alt="MorisCars - Car Rental Mauritius" 
@@ -80,7 +110,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Solid Light Menu Drawer (No CTA button inside) */}
+      {/* Mobile Solid Light Menu Drawer */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-inner">
           <a href="#hero" onClick={(e) => scrollToSection(e, 'hero')} className="mobile-link">HOME</a>
