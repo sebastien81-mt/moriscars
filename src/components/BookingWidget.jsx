@@ -90,6 +90,7 @@ export default function BookingWidget() {
                 scrolling="auto"
                 loading="lazy"
                 allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-top-navigation allow-popups allow-popups-to-escape"
               ></iframe>
             </div>
