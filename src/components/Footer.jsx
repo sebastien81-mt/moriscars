@@ -69,6 +69,7 @@ export default function Footer({ onNavigateTerms, onNavigateHome }) {
               <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>ABOUT US</a></li>
               <li><a href="#faq" onClick={(e) => scrollToSection(e, 'faq')}>FAQ</a></li>
               <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>CONTACT</a></li>
+              <li><a href="/terms-and-conditions" onClick={handleTermsClick}>TERMS OF USE</a></li>
             </ul>
           </div>
 
@@ -88,10 +89,6 @@ export default function Footer({ onNavigateTerms, onNavigateHome }) {
           <p className="copyright-text">
             © {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved. Built for Mauritius Car Rental.
           </p>
-
-          <div className="footer-legal">
-            <a href="/terms-and-conditions" onClick={handleTermsClick}>Terms &amp; Conditions</a>
-          </div>
         </div>
       </div>
     </footer>
