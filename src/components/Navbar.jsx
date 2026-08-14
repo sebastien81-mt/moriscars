@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
-export default function Navbar({ onNavigateHome }) {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -28,48 +28,24 @@ export default function Navbar({ onNavigateHome }) {
   const handleLogoClick = (e) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    if (window.location.pathname !== '/') {
-      if (onNavigateHome) {
-        onNavigateHome();
-      } else {
-        window.location.pathname = '/';
-      }
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const scrollToWidget = (e) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    if (window.location.pathname !== '/') {
-      if (onNavigateHome) {
-        onNavigateHome('hero');
-      } else {
-        window.location.href = '/#hero';
-      }
-    } else {
-      const widgetElem = document.getElementById('hero');
-      if (widgetElem) {
-        widgetElem.scrollIntoView({ behavior: 'smooth' });
-      }
+    const widgetElem = document.getElementById('hero');
+    if (widgetElem) {
+      widgetElem.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const scrollToSection = (e, id) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    if (window.location.pathname !== '/') {
-      if (onNavigateHome) {
-        onNavigateHome(id);
-      } else {
-        window.location.href = `/#${id}`;
-      }
-    } else {
-      const elem = document.getElementById(id);
-      if (elem) {
-        elem.scrollIntoView({ behavior: 'smooth' });
-      }
+    const elem = document.getElementById(id);
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

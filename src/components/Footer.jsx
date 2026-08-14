@@ -2,29 +2,19 @@ import React from 'react';
 import { siteConfig } from '../config/siteConfig';
 import './Footer.css';
 
-export default function Footer({ onNavigateTerms, onNavigateHome }) {
+export default function Footer({ onOpenTerms }) {
   const scrollToSection = (e, id) => {
     e.preventDefault();
-    if (window.location.pathname !== '/') {
-      if (onNavigateHome) {
-        onNavigateHome(id);
-      } else {
-        window.location.href = `/#${id}`;
-      }
-    } else {
-      const elem = document.getElementById(id);
-      if (elem) {
-        elem.scrollIntoView({ behavior: 'smooth' });
-      }
+    const elem = document.getElementById(id);
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const handleTermsClick = (e) => {
     e.preventDefault();
-    if (onNavigateTerms) {
-      onNavigateTerms();
-    } else {
-      window.location.pathname = '/terms-and-conditions';
+    if (onOpenTerms) {
+      onOpenTerms();
     }
   };
 
@@ -69,7 +59,7 @@ export default function Footer({ onNavigateTerms, onNavigateHome }) {
               <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>ABOUT US</a></li>
               <li><a href="#faq" onClick={(e) => scrollToSection(e, 'faq')}>FAQ</a></li>
               <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>CONTACT</a></li>
-              <li><a href="/terms-and-conditions" onClick={handleTermsClick}>TERMS OF USE</a></li>
+              <li><button type="button" className="footer-link-btn" onClick={handleTermsClick}>TERMS OF USE</button></li>
             </ul>
           </div>
 
