@@ -1,0 +1,33 @@
+@import './TermsModal.css';
+
+.privacy-meta-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: var(--color-bg-main);
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.privacy-meta-bar strong {
+  color: var(--color-text-primary);
+}
+
+.contact-details-box {
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.contact-details-box strong {
+  color: var(--color-text-primary);
+}
